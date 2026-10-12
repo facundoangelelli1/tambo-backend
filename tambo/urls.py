@@ -8,12 +8,14 @@ router = DefaultRouter()
 # Registramos la ruta 'vacas' que usará tu VacaViewSet
 router.register(r'vacas', views.VacaViewSet)
 
+
+
 urlpatterns = [
-    path('', include(router.urls)),
-    path('api/login/', obtain_auth_token),
-    path('api/suscripcion-push/', guardar_suscripcion, name='guardar_suscripcion'),
-    path('api/alertas-celo/', views.vacas_en_alerta, name='alertas_celo'),
-    path('api/registrar-celo/', views.registrar_celo, name='registrar_celo'),
+    # Quita el 'api/' de aqui para que no se duplique:
+    path('login/', views.login_view, name='login'),
+    path('suscripcion-push/', views.guardar_suscripcion, name='guardar_suscripcion'),
+    path('alertas-celo/', views.alertas_celo, name='alertas_celo'),
+    path('registrar-celo/', views.registrar_celo, name='registrar_celo'),
 ]
 
 

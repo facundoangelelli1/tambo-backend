@@ -5,3 +5,4 @@ db.sqlite3
 alertas_push.log
 .env
 frontend_tambo/frontend_tambo/
+frontend_tambo/
